@@ -1,0 +1,17 @@
+<%= erb :'partials/_header' %>
+<br>
+<form action="/squads" method="POST">
+  <div class = "form-group">
+    <label for="name">Name: </label>
+    <input type="text" autofocus required class="form-control" name="name" id="name">
+  </div>
+  <div class = "form-group">
+    <label for="mascot">Mascot: </label>
+    <input type="text" required class = "form-control" name="mascot" id="mascot">
+  </p>
+  <div>
+    <input type="submit" class ="btn btn-success" value="Add">
+  </div>
+</form>
+
+<%= erb :'partials/_footer' %>

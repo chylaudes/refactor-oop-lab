@@ -1,0 +1,50 @@
+<%= erb :'partials/_header' %>
+  <h1><%= @squad.name %></h1>
+  <h2>Students:</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Spirit Animal</th>
+        <th>Edit User</th>
+        <th>Delete User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @squad.students.each do |student| %>
+      <tr>
+        <td>
+          <a href="/squads/<%= @squad.id %>/students/<%= student["id"]%>"><%=student["name"]%></a>
+        </td>
+        <td>
+          <%= student["age"]%>
+        </td>
+        <td>
+          <%= student["spirit_animal"]%>
+        </td>
+        <td>
+          <a href="/squads/<%= @squad.id %>/students/<%= student["id"]%>/edit">Edit</a>
+        </td>
+        <td>
+          <form action="/squads/<%= student["squad_id"]%>/students/<%= student["id"]%>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" class ="btn btn-xs btn-danger"value="X">
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </ul>
+  <p>
+    <a href="/squads/<%= @squad.id %>/students/new">Add a Student to this squad</a>
+  </p>
+  <p>
+   <a href="/squads/<%= @squad.id %>/edit">Edit this squad </a>
+  </p>
+  <p>
+    <a href="/squads">Go back</a>
+  </p>
+
+<%= erb :'partials/_footer' %>

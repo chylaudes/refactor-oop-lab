@@ -1,0 +1,34 @@
+<%= erb :'partials/_header' %>
+<br>
+<form class ="form-horizontal" action="/squads/<%= @student.squad_id%>/students/<%= @student.id%>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <div class ="form-group">
+    <label class="col-sm-2 control-label" for="name">Name: </label>
+    <div class="col-sm-10">
+    <input autofocus class ="form-control" type="text" name="name" id="name" value="<%=@student.name%>">
+    </div>
+  </div>
+  <div class ="form-group">
+    <label  class="col-sm-2 control-label" for="age">Age: </label>
+    <div class="col-sm-10">
+      <input class ="form-control" type="text" name="age" id="age" value="<%=@student.age%>">
+    </div>
+  </div>
+  <div class ="form-group">
+    <label class="col-sm-2 control-label"for="spirit">Spirit Animal: </label>
+    <div class="col-sm-10">
+    <input class ="form-control" type="text" name="spirit_animal" id="spirit" value="<%=@student.spirit_animal%>">
+    </div>
+  </div>
+
+  <div class ="col-sm-offset-2 col-sm-10">
+    <input class="btn btn-success" type="submit" value="Edit">
+  </p>
+</form>
+
+<form action="/squads/<%= @student.squad_id%>/students/<%= @student.id%>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input class="btn btn-danger"  type="submit" value="Delete">
+</form>
+
+<%= erb :'partials/_footer' %>

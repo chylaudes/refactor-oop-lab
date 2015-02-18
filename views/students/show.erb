@@ -1,0 +1,15 @@
+<%= erb :'partials/_header' %>
+  <h1>Here is a student</h1>
+  <p>
+    Name: <%= @student.name%>
+  </p>
+  <p>
+    Age: <%= @student.age%>
+  </p>
+  <p>
+    Spirit Animal: <%= @student.spirit_animal%>
+  </p>
+  <p>
+    <a href="/squads/<%= @student.squad_id%>/students/<%= @student.id%>/edit">Edit this student</a>
+  </p>
+<%= erb :'partials/_footer' %>

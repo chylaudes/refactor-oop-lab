@@ -1,0 +1,28 @@
+<%= erb :'partials/_header' %>
+<br>
+<form class="form-horizontal" action="/squads/<%= @squad_id%>/students" method="POST">
+  <div class="form-group">
+    <label class = "col-sm-2 control-label"for="name">Name: </label>
+    <div class ="col-sm-10">
+      <input autofocus required class= "form-control" type="text" name="name" id="name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class = "col-sm-2 control-label"for="age">Age: </label>
+    <div class ="col-sm-10">
+      <input required class= "form-control" type="text" name="age" id="age">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class = "col-sm-2 control-label"for="spirit">Spirit Animal: </label>
+    <div class ="col-sm-10">
+      <input required class= "form-control" type="text" name="spirit_animal" id="spirit">
+    </div>
+  </div>
+    <input type="hidden" name="squad_id" value ="<%= @squad_id%>">
+  <div class="col-sm-offset-2 col-sm-10">
+    <input class="btn btn-success"type="submit" value="Add Student">
+  </div>
+</form>
+
+<%= erb :'partials/_footer' %>

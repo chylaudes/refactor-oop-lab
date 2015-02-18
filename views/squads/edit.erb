@@ -1,0 +1,23 @@
+<%= erb :'partials/_header' %>
+<br>
+<form action="/squads/<%= @squad.id %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+  <p class = "form-group">
+    <label for="name">Name: </label>
+    <input type="text" class="form-control" name="name" id="name" value="<%= @squad.name %>">
+  </p>
+  <p class = "form-group">
+    <label for="mascot">Mascot: </label>
+    <input type="text" class="form-control" name="mascot" id="mascot" value="<%= @squad.mascot %>">
+  </p>
+  <p>
+    <input class ="btn btn-success"type="submit" value="Edit">
+  </p>
+</form>
+
+<form action="/squads/<%= @squad.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input class ="btn btn-danger" type="submit" value="Delete">
+</form>
+
+<%= erb :'partials/_footer' %>
